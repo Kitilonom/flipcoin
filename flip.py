@@ -30,9 +30,13 @@ def main():
     count = args.c
     coin = Coin()
     if (count):
-        for n in range(int(count)):
-            Coin.get_flip(coin)
-            Coin.see_res_flip(coin)
+        if not count.isdecimal():
+            print("Количество бросков должно быть ЦЕЛЫМ"
+            + " и ПОЛОЖИТЕЛЬНЫМ числом!")
+        else:
+            for n in range(int(count)):
+                Coin.get_flip(coin)
+                Coin.see_res_flip(coin)
     else :
         while True:
             userinput = input("Выберите ваше действие:\n"
